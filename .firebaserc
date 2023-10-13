@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "control-clientes-4904e": {
+      "hosting": {
+        "control-clientes": [
+          "control-clientes-4904e"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "control-clientes-4904e"
+  }
+}
