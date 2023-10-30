@@ -9,8 +9,8 @@ import { NoEncontradoComponent } from './componentes/no-encontrado/no-encontrado
 import { ClientesComponent } from './componentes/clientes/clientes.component';
 
 const routes: Routes = [
-  {path: '', component: TableroComponent},
-  {path: 'login', component: LoginComponent},
+  {path: '', component: LoginComponent},
+  {path: 'inicio', component: TableroComponent},
   {path: 'clientes', component: ClientesComponent},
   {path: 'registrarse', component: RegistrarUsuarioComponent},
   {path: 'configuracion', component: ConfiguracionComponent},

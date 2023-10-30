@@ -1,11 +1,13 @@
+
 <!-- Botones -->
 <section id="actions" class="py-4 mb-b bg-light">
   <div class="container">
     <div class="row">
       <div class="col-md-3">
-        <a href="#" class="btn btn-primary btn-block" data-toggle="modal" data-target="agregarClienteModal">
-          <i class="fas fa-plus"></i> Agregar Cliente
-        </a>
+        <button mat-raised-button color="primary" class="text-white" style="width: 120%;"
+          (click)="abrirAgregarDialog()">
+          <mat-icon aria-hidden="false" fontIcon="add" style="padding-right: 10%;"></mat-icon> Agregar Cliente
+        </button>
       </div>
     </div>
   </div>
@@ -23,6 +25,8 @@
           <table class="table table-striped">
             <thead class="thead-dark">
               <tr>
+                <!--TODO: Checkbutton para editar y eliminar, no filas de botones-->
+                <th></th>
                 <th>#</th>
                 <th>Nombre</th>
                 <th>Saldo</th>
@@ -31,21 +35,22 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let cliente of clientes; let i = index">
-                <td> {{i +1}}</td>
-                <td> {{cliente.nombre}} {{cliente.apellido}}</td>
-                <td> {{cliente.saldo | currency:' MNX': '$'}}</td>
-                <td>
-                  <a routerLink="/cliente/editar/{{cliente.id}}" class="btn btn-Light btn-block" data-toggle="modal"
-                    data-target="editarClienteModal">
-                    <i class="fas fa-pencil"></i>
-                  </a>
-                </td>
-                <td>
-                  <a href="#" class="btn btn-Light btn-block" data-toggle="modal" data-target="eliminarClienteModal">
-                    <i class="fas fa-trash"></i>
-                  </a>
-                </td>
+              <tr *ngFor="let cliente of clientes; let i = index" style="vertical-align: middle;">
+                  <td><mat-checkbox class="example-margin"></mat-checkbox></td>
+                  <td> {{i + 1}}</td>
+                  <td> {{cliente.nombre}} {{cliente.apellido}}</td>
+                  <td> {{cliente.saldo | currency:' MNX': '$'}}</td>
+                  <td>
+                    <a routerLink="/cliente/editar/{{cliente.id}}" class="btn btn-Light btn-block" data-toggle="modal"
+                      data-target="editarClienteModal">
+                      <i class="fas fa-pencil"></i>
+                    </a>
+                  </td>
+                  <td>
+                    <a href="#" class="btn btn-Light btn-block" data-toggle="modal" data-target="eliminarClienteModal">
+                      <i class="fas fa-trash"></i>
+                    </a>
+                  </td>
               </tr>
             </tbody>
           </table>
@@ -66,11 +71,26 @@
             <h3> Total de Clientes</h3>
             <h4 class="display-4">
               <i class="fa fa-users">
-                  {{clientes?.length}}</i>
+                {{clientes?.length}}</i>
             </h4>
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
+
+<!--Agregar cliente modal-->
+<!--div class="modal fade" id="agregarClienteModal">
+  <div class="modal-dialog modl-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-info text-white">
+        <h5 class="modal-title">Agregar cliente</h5>
+        <button class="close" data-dismiss="modal">
+          <span>&times;</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div-->

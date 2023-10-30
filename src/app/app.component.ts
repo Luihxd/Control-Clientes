@@ -12,6 +12,7 @@ export class AppComponent {
   title = 'control-clientes';
 
   ngOnInit(): void{
-    firebase.initializeApp(environment.firestore, 'control-clientes');
+    firebase.initializeApp(environment.firestore);
+    console.log("App initialized")
   }
 }

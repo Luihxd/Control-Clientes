@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument, DocumentReference } from '@angular/fire/compat/firestore';
 import { Cliente } from '../modelos/cliente.model';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -20,6 +20,8 @@ export class ClienteServicio {
 
   getClientes(): Observable<Cliente[]> {
     //Obtener clientes
+    //this.clientesRef = this.firestore.collection('clientes', ref => ref.orderBy('nombre', 'asc'));
+    console.log("Aun no hacemos get, ", this.clientes);
     this.clientes = this.clientesRef.snapshotChanges().pipe(
         map(cambios => {
             return cambios.map( accion => {
@@ -29,18 +31,19 @@ export class ClienteServicio {
             })
         })
     );
+    console.log("Ya hicimos un get, ", this.clientes);
     return this.clientes;
 
   }
 
-  addCliente(cliente: Cliente){
-    //return this.clientesRef.add({... cliente})
+  addCliente(cliente: Cliente): Promise<DocumentReference<Cliente>> {
+    return this.clientesRef.add({... cliente})
   }
 
   /*updateCliente(id: string, newData: any){
     //return this.clientesRef.doc(id).update(newData);
   }*/
-  
+
   delete(id: string){
     return this.clientesRef.doc(id).delete();
   }
