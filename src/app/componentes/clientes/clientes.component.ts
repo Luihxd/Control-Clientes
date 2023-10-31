@@ -14,6 +14,7 @@ import { LoginServicio } from 'src/app/servicios/login.service';
 })
 export class ClientesComponent implements OnInit {
 
+  id: string;
   nombre: string;
   apellido: string;
   email: string;
@@ -50,13 +51,29 @@ export class ClientesComponent implements OnInit {
 
   abrirAgregarDialog(): void {
     const dialogRef = this.dialog.open(AgregarClienteModalComponent, {
-      width: '600px',
-      //data: { nombre: this.nombre, apellido: this.apellido, email: this.email, saldo: this.saldo}
+      width: '400px',
       data: {}
     });
 
     dialogRef.afterClosed().subscribe((res) => {
-      this.nombre = res;
+      //this.nombre = res;
+    });
+  }
+
+  abrirModificarDialog(cliente: Cliente): void {
+    this.id = cliente.id ?? "";
+    this.nombre = cliente.nombre ?? "";
+    this.apellido = cliente.apellido ?? "";
+    this.email = cliente.email ?? "";
+    this.saldo = cliente.saldo ?? 0;
+    console.log("antes de abrir", this.id);
+    const dialogRef = this.dialog.open(AgregarClienteModalComponent, {
+      width: '400px',
+      data: { data: { id: this.id, nombre: this.nombre, apellido: this.apellido, email: this.email, saldo: this.saldo}}
+    });
+
+    dialogRef.afterClosed().subscribe((res) => {
+
     });
   }
   /*setDefault(): void{

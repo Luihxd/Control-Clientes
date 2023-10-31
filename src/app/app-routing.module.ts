@@ -4,7 +4,6 @@ import { TableroComponent } from './componentes/tablero/tablero.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { RegistrarUsuarioComponent } from './componentes/registrar-usuario/registrar-usuario.component';
 import { ConfiguracionComponent } from './componentes/configuracion/configuracion.component';
-import { EditarClienteComponent } from './componentes/editar-cliente/editar-cliente.component';
 import { NoEncontradoComponent } from './componentes/no-encontrado/no-encontrado.component';
 import { ClientesComponent } from './componentes/clientes/clientes.component';
 
@@ -14,7 +13,6 @@ const routes: Routes = [
   {path: 'clientes', component: ClientesComponent},
   {path: 'registrarse', component: RegistrarUsuarioComponent},
   {path: 'configuracion', component: ConfiguracionComponent},
-  {path: 'cliente/editar/:id', component: EditarClienteComponent},
   {path: '**', component: NoEncontradoComponent},
 ];
 

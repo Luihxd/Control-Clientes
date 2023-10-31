@@ -40,9 +40,9 @@ export class ClienteServicio {
     return this.clientesRef.add({... cliente})
   }
 
-  /*updateCliente(id: string, newData: any){
-    //return this.clientesRef.doc(id).update(newData);
-  }*/
+  updateCliente(id: string, newData: any){
+    return this.clientesRef.doc(id).update(newData);
+  }
 
   delete(id: string){
     return this.clientesRef.doc(id).delete();
