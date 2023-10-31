@@ -1,0 +1,36 @@
+
+<section id="login" class="py-5 mb-4" style="background-color: lightblue;">
+  <div class="container" style="width: 55%;">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <div class="card">
+          <div class="card-header">
+            <h1 style="padding-top: 5%;">Login</h1>
+          </div>
+          <div class="card-body">
+            <form (submit)="login()">
+              <div class="form-group">
+                <mat-label style="text-align: center;">Email:</mat-label>
+                <br>
+                <mat-form-field style="width: 100%;">
+                  <input matInput type="email" name="email" ngModel #emailInput="ngModel" [(ngModel)]="email" required
+                  placeholder="Ingrese su correo electrónico">
+                </mat-form-field>
+              </div>
+              <div class="form-group">
+                <mat-label style="text-align: center;">Contraseña:</mat-label>
+                <br>
+                <mat-form-field style="width: 100%;">
+                  <input matInput type="password" name="password" ngModel #passwordInput="ngModel" [(ngModel)]="password" required
+                  placeholder="Ingrese su contraseña">
+                </mat-form-field>
+              </div>
+              <input type="submit" value="Iniciar Sesión" class="btn btn-clock"
+                style="width: 100%; background-color: rgb(150, 219, 241);">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
