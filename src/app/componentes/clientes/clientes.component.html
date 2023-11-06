@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-md-3">
         <button mat-raised-button color="primary" class="text-white" style="width: 120%;"
-          (click)="abrirAgregarDialog()">
+          (click)="abrirAgregarClienteDialog()">
           <mat-icon aria-hidden="false" fontIcon="add" style="padding-right: 10%;"></mat-icon> Agregar Cliente
         </button>
       </div>
@@ -40,12 +40,11 @@
                 <td> {{cliente.nombre}} {{cliente.apellido}}</td>
                 <td> {{cliente.saldo | currency:' MNX': '$'}}</td>
                 <td>
-                    <i class="fas fa-pencil" (click)="abrirModificarDialog(cliente)"></i>
+                  <i class="fas fa-pencil" (click)="abrirModificarClienteDialog(cliente)"></i>
                 </td>
                 <td>
-                  <a href="#" class="btn btn-Light btn-block" data-toggle="modal" data-target="eliminarClienteModal">
-                    <i class="fas fa-trash"></i>
-                  </a>
+                  <i class="fas fa-trash" (click)="abrirEliminarClienteDialog(cliente)"></i>
+
                 </td>
               </tr>
             </tbody>

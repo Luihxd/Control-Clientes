@@ -6,6 +6,7 @@ import { ClienteServicio } from 'src/app/servicios/clientes.service';
 import { AgregarClienteModalComponent } from './agregar-cliente-modal/agregar-cliente-modal.component';
 import { MatDialog } from '@angular/material/dialog';
 import { LoginServicio } from 'src/app/servicios/login.service';
+import { EliminarClienteModalComponent } from './eliminar-cliente-modal/eliminar-cliente-modal.component';
 
 @Component({
   selector: 'app-clientes',
@@ -49,7 +50,7 @@ export class ClientesComponent implements OnInit {
     return saldoTotal;
   }
 
-  abrirAgregarDialog(): void {
+  abrirAgregarClienteDialog(): void {
     const dialogRef = this.dialog.open(AgregarClienteModalComponent, {
       width: '400px',
       data: {}
@@ -60,7 +61,7 @@ export class ClientesComponent implements OnInit {
     });
   }
 
-  abrirModificarDialog(cliente: Cliente): void {
+  abrirModificarClienteDialog(cliente: Cliente): void {
     this.id = cliente.id ?? "";
     this.nombre = cliente.nombre ?? "";
     this.apellido = cliente.apellido ?? "";
@@ -70,6 +71,19 @@ export class ClientesComponent implements OnInit {
     const dialogRef = this.dialog.open(AgregarClienteModalComponent, {
       width: '400px',
       data: { data: { id: this.id, nombre: this.nombre, apellido: this.apellido, email: this.email, saldo: this.saldo}}
+    });
+
+    dialogRef.afterClosed().subscribe((res) => {
+
+    });
+  }
+
+  abrirEliminarClienteDialog(cliente: Cliente): void {
+    this.id = cliente.id ?? "";
+    console.log("antes de abrir", this.id);
+    const dialogRef = this.dialog.open(EliminarClienteModalComponent, {
+      width: '500px',
+      data: { data: { id: this.id}}
     });
 
     dialogRef.afterClosed().subscribe((res) => {

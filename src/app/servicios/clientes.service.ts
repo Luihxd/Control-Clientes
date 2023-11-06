@@ -44,7 +44,7 @@ export class ClienteServicio {
     return this.clientesRef.doc(id).update(newData);
   }
 
-  delete(id: string){
+  deleteCliente(id: string){
     return this.clientesRef.doc(id).delete();
   }
 }

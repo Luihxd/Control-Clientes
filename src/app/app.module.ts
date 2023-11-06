@@ -34,7 +34,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { LoginServicio } from './servicios/login.service';
-//import { AngularFireAuth } from '@angular/fire/auth';
+import { EliminarClienteModalComponent } from './componentes/clientes/eliminar-cliente-modal/eliminar-cliente-modal.component';
 
 const materialModules = [
   MatButtonModule,
@@ -55,7 +55,8 @@ const materialModules = [
     ConfiguracionComponent,
     NoEncontradoComponent,
     PiePaginaComponent,
-    AgregarClienteModalComponent
+    AgregarClienteModalComponent,
+    EliminarClienteModalComponent
   ],
   imports: [
     BrowserModule,
