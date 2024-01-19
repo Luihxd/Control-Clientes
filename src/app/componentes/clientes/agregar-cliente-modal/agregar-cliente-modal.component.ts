@@ -41,10 +41,10 @@ export class AgregarClienteModalComponent {
     //guardar el cliente
     if(clienteForm.valid){
       if(this.data.data !== undefined){
-      this.clienteServicio.updateCliente(this.cliente.id ?? '', this.cliente);
-      this.toastr.success("Cliente modificado correctamente", "Modificado", {timeOut: 4000})
-      this.dialogRef.close();
-      return;
+        this.clienteServicio.updateCliente(this.cliente.id ?? '', this.cliente);
+        this.toastr.success("Cliente modificado correctamente", "Modificado", {timeOut: 4000})
+        this.dialogRef.close();
+        return;
       }
       this.clienteServicio.addCliente(this.cliente);
       this.toastr.success("Cliente agregado correctamente", "Agregado", {timeOut: 4000})

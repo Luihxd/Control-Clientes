@@ -18,6 +18,8 @@ export class EliminarClienteModalComponent {
 
   mostrarMensaje: boolean = false;
   id: string;
+  nombre: string;
+  apellido: string;
 
   constructor(
     public dialogRef: MatDialogRef<EliminarClienteModalComponent>,
@@ -28,6 +30,8 @@ export class EliminarClienteModalComponent {
     console.log("data: ", this.data);
     if(this.data !== undefined){
       this.id = this.data.data.id;
+      this.nombre = this.data.data.nombre;
+      this.apellido = this.data.data.apellido;
     }else{
       console.log("El objeto es nulo");
     }

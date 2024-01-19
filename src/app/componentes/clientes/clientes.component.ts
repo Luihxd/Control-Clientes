@@ -80,29 +80,17 @@ export class ClientesComponent implements OnInit {
 
   abrirEliminarClienteDialog(cliente: Cliente): void {
     this.id = cliente.id ?? "";
+    this.nombre = cliente.nombre ?? "";
+    this.apellido = cliente.apellido ?? "";
     console.log("antes de abrir", this.id);
     const dialogRef = this.dialog.open(EliminarClienteModalComponent, {
       width: '500px',
-      data: { data: { id: this.id}}
+      data: { data: { id: this.id, nombre: this.nombre, apellido: this.apellido}}
     });
 
     dialogRef.afterClosed().subscribe((res) => {
 
     });
   }
-  /*setDefault(): void{
-    this.clienteTemp = undefined;
-    this.indexTemp = -1;
-    this.getClientes();
 
-  }
-
-  getClientes(): void{
-
-  }
-
-  setSelectedCliente(cliente: Cliente, index: number){
-    this.clienteTemp = cliente;
-    this.indexTemp = index;
-  }*/
 }

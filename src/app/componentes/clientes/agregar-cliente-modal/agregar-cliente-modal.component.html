@@ -49,7 +49,7 @@
       <mat-label style="text-align: center;">Ingrese el saldo del cliente</mat-label>
       <input matInput type="number" name="saldo" ngModel required #saldo="ngModel" [(ngModel)]="cliente.saldo"
       [ngClass]= "{'is-invalid': saldo.errors && saldo.touched}" required>
-      <div [hidden]="!email.errors?.['required']" class="invalid-feedback">
+      <div [hidden]="!saldo.errors?.['required']" class="invalid-feedback">
        Saldo requerido
       </div>
     </mat-form-field>
