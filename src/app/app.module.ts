@@ -35,6 +35,7 @@ import { ToastrModule } from 'ngx-toastr';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { LoginServicio } from './servicios/login.service';
 import { EliminarClienteModalComponent } from './componentes/clientes/eliminar-cliente-modal/eliminar-cliente-modal.component';
+import { AuthGuard } from './guardianes/auh.guard';
 
 const materialModules = [
   MatButtonModule,
@@ -73,7 +74,7 @@ const materialModules = [
     AngularFireAuthModule
 
   ],
-  providers: [ClienteServicio, LoginServicio],
+  providers: [ClienteServicio, LoginServicio, AuthGuard],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   exports: [

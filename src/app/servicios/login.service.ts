@@ -62,6 +62,15 @@ export class LoginServicio{
     })
   }
 
+  registerUser(email: string, password: string){
+    return new Promise((resolve, reject) => {
+      firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then(datos  => resolve(datos),
+          error => reject(error)
+        )
+    })
+  }
+
 }
 
 

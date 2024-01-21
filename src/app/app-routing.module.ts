@@ -6,13 +6,15 @@ import { RegistrarUsuarioComponent } from './componentes/registrar-usuario/regis
 import { ConfiguracionComponent } from './componentes/configuracion/configuracion.component';
 import { NoEncontradoComponent } from './componentes/no-encontrado/no-encontrado.component';
 import { ClientesComponent } from './componentes/clientes/clientes.component';
+import { AuthGuard } from './guardianes/auh.guard';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
-  {path: 'inicio', component: TableroComponent},
-  {path: 'clientes', component: ClientesComponent},
-  {path: 'registrarse', component: RegistrarUsuarioComponent},
-  {path: 'configuracion', component: ConfiguracionComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'inicio', component: TableroComponent, canActivate: [AuthGuard]},
+  {path: 'clientes', component: ClientesComponent, canActivate: [AuthGuard]},
+  {path: 'registro', component: RegistrarUsuarioComponent},
+  {path: 'configuracion', component: ConfiguracionComponent, canActivate: [AuthGuard]},
   {path: '**', component: NoEncontradoComponent},
 ];
 
