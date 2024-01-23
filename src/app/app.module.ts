@@ -36,6 +36,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { LoginServicio } from './servicios/login.service';
 import { EliminarClienteModalComponent } from './componentes/clientes/eliminar-cliente-modal/eliminar-cliente-modal.component';
 import { AuthGuard } from './guardianes/auh.guard';
+import { ConfiguracionServicio } from './servicios/configuracion.service';
+
+import { FirestoreSettings } from '@angular/fire/firestore';
 
 const materialModules = [
   MatButtonModule,
@@ -74,7 +77,8 @@ const materialModules = [
     AngularFireAuthModule
 
   ],
-  providers: [ClienteServicio, LoginServicio, AuthGuard],
+  providers: [ClienteServicio, LoginServicio, AuthGuard, ConfiguracionServicio
+  ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   exports: [
