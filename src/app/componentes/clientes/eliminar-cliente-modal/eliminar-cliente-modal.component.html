@@ -1,0 +1,8 @@
+<div style="padding-left: 12%; padding-top: 5%; padding-right: 12%;">
+  <h1 style="padding-top: 5%;">¿Está seguro de eliminar al cliente  {{nombre}} {{apellido}}?</h1>
+  <mat-divider></mat-divider>
+  <div class="modal-footer" style="padding-bottom: 8%; padding-right: 15%;">
+    <button mat-button style="width: 50%;" (click)="onCerrar()">Cancelar</button>
+    <button mat-button style="width: 50%;" type="submit" (click)="onEliminar()" cdkFocusInitial>Eliminar</button>
+  </div>
+</div>
