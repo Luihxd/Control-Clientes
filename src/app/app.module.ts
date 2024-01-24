@@ -39,6 +39,7 @@ import { AuthGuard } from './guardianes/auh.guard';
 import { ConfiguracionServicio } from './servicios/configuracion.service';
 
 import { FirestoreSettings } from '@angular/fire/firestore';
+import { ConfiguracionGuard } from './guardianes/configuracion.guard';
 
 const materialModules = [
   MatButtonModule,
@@ -77,7 +78,7 @@ const materialModules = [
     AngularFireAuthModule
 
   ],
-  providers: [ClienteServicio, LoginServicio, AuthGuard, ConfiguracionServicio
+  providers: [ClienteServicio, LoginServicio, AuthGuard, ConfiguracionServicio, ConfiguracionGuard,
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

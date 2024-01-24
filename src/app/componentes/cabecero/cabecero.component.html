@@ -25,18 +25,18 @@
         </li>
 
         <li  *ngIf="!usuarioLoggead" class="nav-item">
-          <a routerLink="/" class="nav-link" routerLinkActive="router-link-active">
+          <a routerLink="/login" class="nav-link" routerLinkActive="router-link-active">
             <i class="fas fa-user"></i> Login
           </a>
         </li>
-        <li  *ngIf="!usuarioLoggead" class="nav-item">
+        <li  *ngIf="!usuarioLoggead && permitirRegistro" class="nav-item">
           <a routerLink="/registro" class="nav-link" routerLinkActive="router-link-active">
             <i class="fas fa-user"></i> Registrarse
           </a>
         </li>
 
         <li  *ngIf="usuarioLoggead" class="nav-item">
-          <a style="cursor: pointer" (click)="cerrarSesion()" class="nav-link">
+          <a style="cursor: pointer" (click)="cerrarSesion()" class="nav-link" routerLinkActive="router-link-active">
             <i class="fas fa-user-times"></i> Salir
           </a>
         </li>
